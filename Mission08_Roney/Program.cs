@@ -1,7 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using Mission08_Roney.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<Lahman18712022Context>(options =>
+{
+    options.UseSqlite(builder.Configuration["ConnectionStrings:BaseballConnection"]);
+});
+
+builder.Services.AddScoped<IBaseballRepository, EFBaseballRepository>();
 
 var app = builder.Build();
 

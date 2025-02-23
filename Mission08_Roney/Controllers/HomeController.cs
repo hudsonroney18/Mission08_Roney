@@ -1,31 +1,33 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Mission08_Roney.Models;
+using SQLitePCL;
 
 namespace Mission08_Roney.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    private IBaseballRepository _repo;
+    public HomeController(IBaseballRepository temp)
     {
-        _logger = logger;
+        _repo = temp;
     }
-
+    
+    [HttpGet]
     public IActionResult Index()
     {
-        return View();
+        return View(new Manager());
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+    [HttpPost]
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    public IActionResult Index(Manager manager)
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        if (ModelState.IsValid)
+        {
+            _repo.AddManager(manager);
+        }
+        return View(new Manager());
     }
 }

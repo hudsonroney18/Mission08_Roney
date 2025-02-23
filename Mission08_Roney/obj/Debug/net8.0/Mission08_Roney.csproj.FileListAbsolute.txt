@@ -156,3 +156,4 @@
 /Users/hudsonroney/RiderProjects/Mission08_Roney/Mission08_Roney/obj/Debug/net8.0/Mission08_Roney.pdb
 /Users/hudsonroney/RiderProjects/Mission08_Roney/Mission08_Roney/obj/Debug/net8.0/Mission08_Roney.genruntimeconfig.cache
 /Users/hudsonroney/RiderProjects/Mission08_Roney/Mission08_Roney/obj/Debug/net8.0/ref/Mission08_Roney.dll
+/Users/hudsonroney/RiderProjects/Mission08_Roney/Mission08_Roney/obj/Debug/net8.0/Mission08_Roney.sourcelink.json
